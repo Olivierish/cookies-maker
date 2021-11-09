@@ -1,0 +1,64 @@
+@import "./style.scss";
+$light-gray : rgb(75, 75, 75);
+$light-gray-2 : rgb(141, 141, 141);
+input{
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: 500;
+    width: 80%;
+    max-width: 500px;
+    background: $bg-color-light;
+    border: none;
+    outline: none;
+    border: 1px solid $light-gray;
+    border-radius: 4px;
+    color: $text-main-color;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button{
+        display: block;
+        width: 150px;
+        font-size: 1.1em;
+        padding: 5px;
+        margin: 5px;
+        background: $bg-color;
+        border: 1px solid $light-gray;
+        outline: none;
+        color: $light-gray-2;
+        filter: drop-shadow(0 0 0.20rem rgb(75, 75, 75));
+        
+        &:hover{
+            background: $light-gray-2;
+            color: $bg-color;
+        }
+    }
+}
+.myCookies{
+    list-style-type: none;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+    padding: 15px;
+    font-size: 1em;
+
+    li{
+        padding: 5px 0;
+        border-bottom: $light-gray solid 1px;
+    }
+}
+.warnings{
+    margin: 10px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    font-size: 0.8em;
+    color: $title-color;
+
+}

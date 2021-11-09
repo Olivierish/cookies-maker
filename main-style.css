@@ -72,8 +72,8 @@ header .logo {
   font-size: 1.3em;
   font-weight: 700;
   letter-spacing: 1px;
-  -webkit-filter: drop-shadow(0 0 5px 0px #9967e8);
-          filter: drop-shadow(0 0 5px 0px #9967e8);
+  -webkit-filter: drop-shadow(0 0 15px #9967e8);
+          filter: drop-shadow(0 0 15px #9967e8);
 }
 
 header #open {
@@ -327,4 +327,72 @@ header #close .hamb2 {
     padding: 40px 100px;
   }
 }
-/*# sourceMappingURL=style.css.map */
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 1em;
+  font-weight: 500;
+  width: 80%;
+  max-width: 500px;
+  background: #2c2c2d;
+  border: none;
+  outline: none;
+  border: 1px solid #4b4b4b;
+  border-radius: 4px;
+  color: #f1f1f1;
+}
+
+.btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+}
+
+.btns button {
+  display: block;
+  width: 150px;
+  font-size: 1.1em;
+  padding: 5px;
+  margin: 5px;
+  background: #222223;
+  border: 1px solid #4b4b4b;
+  outline: none;
+  color: #8d8d8d;
+  -webkit-filter: drop-shadow(0 0 0.2rem #4b4b4b);
+          filter: drop-shadow(0 0 0.2rem #4b4b4b);
+}
+
+.btns button:hover {
+  background: #8d8d8d;
+  color: #222223;
+}
+
+.myCookies {
+  list-style-type: none;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 500px;
+  padding: 15px;
+  font-size: 1em;
+}
+
+.myCookies li {
+  padding: 5px 0;
+  border-bottom: #4b4b4b solid 1px;
+}
+
+.warnings {
+  margin: 10px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  font-size: 0.8em;
+  color: #9967e8;
+}
+/*# sourceMappingURL=main-style.css.map */

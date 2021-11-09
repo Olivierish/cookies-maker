@@ -14,3 +14,14 @@ function toggleClassName(){
         closeElt.style.display = "none";
     }
 }
+
+//Date
+const today = new Date();
+const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+
+//let day = ('0' + nextWeek); //To turn nextWeek into a string
+let day = nextWeek.getDate().toString() 
+let month = (today.getMonth() + 1).toString();
+let year = today.getFullYear().toString();
+console.log(day, month, year) 
+

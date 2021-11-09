@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-$bg-color: #0e112b;
-$bg-color-light: rgb(17, 24, 65);
-$sidebar-hover-color: #3f8ffc;
+$bg-color: #222223;
+$bg-color-light: #2c2c2d;
+$sidebar-hover-color: #9967e8;
 $text-main-color: #f1f1f1;
+$title-color: #9967e8;
 
 *, ::before, ::after{
     margin: 0;
@@ -54,12 +55,13 @@ header{
     z-index: 1000;
 
     .logo{
-        color: $text-main-color;
+        color: $title-color;
         text-decoration: none;
         font-size: 1.3em;
-        text-transform: uppercase;
+        //text-transform: uppercase;
         font-weight: 700;
         letter-spacing: 1px;
+        filter: drop-shadow(0 0 5px 0px $title-color);
     }
 
     #open{
@@ -144,7 +146,7 @@ header{
     position: relative;
     width: 100%;
     padding: 40px 20px;
-    border: 1px dashed $text-main-color;
+    //border: 1px dashed $text-main-color;
     color: $text-main-color;
 }
 
