@@ -24,4 +24,5 @@ let day = nextWeek.getDate().toString()
 let month = (today.getMonth() + 1).toString();
 let year = today.getFullYear().toString();
 console.log(day, month, year) 
+document.querySelector('input[type=date]').value = `${year}-${month}-${day}`;
 
