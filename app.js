@@ -16,9 +16,10 @@ function toggleClassName(){
 }
 
 const myCookiesElt = document.querySelector('.myCookies');
-const warningsElt = document.querySelector('.warnigns');
+const warningsElt = document.querySelector('.warnings');
 const btnElts = document.querySelectorAll('button');
 const inputElts = document.querySelectorAll('input');
+let done = false;
 
 //Date
 const today = new Date();
@@ -53,6 +54,28 @@ function btnAction(e) {
 }
 
 function createCookie(name, value, exp) {
+    warningsElt.innerText = "";
+    done = false;
+    myCookiesElt.innerHTML = "";
+    //If the cookie name already exists.
+    let cookies = document.cookie.split(";");
+    cookies.forEach(ck => {
+    ck = ck.trim();
+    let formatCk = ck.split("=");
+    if (formatCk[0] === encodeURIComponent(name)) {
+        done = true;
+    }
+    })
+
+if (done === true) {
+    warningsElt.innerText = "A cookie has already the same name.";
+    return;
+}
+    //If the cookie doesn't have a name.
+    if (name.length === 0) {
+        warningsElt.innerText = "Impossible to define a cookie without a name.";
+        return;
+    }
     exp = new Date(exp).toUTCString();
     document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)};expires=${exp}`;
     let cookieElt = document.createElement('li');
@@ -61,4 +84,31 @@ function createCookie(name, value, exp) {
     setTimeout(() => {
         cookieElt.remove();
     }, 1500);
+}
+
+function displayAllCookies() {
+    myCookiesElt.textContent = "";
+    let cookies = document.cookie.split(";");
+    if(cookies.join() === ""){
+        warningsElt.innerText = "There are no cookies to display.";
+        return;
+    }
+    cookies.forEach(ck => {
+        ck = ck.trim();
+        let formatCk = ck.split("=");
+        let cookieElt = document.createElement('li');
+
+        warningsElt.innerText = "Click on the cookie to delete it.";
+        cookieElt.innerText = `Name : ${decodeURIComponent(formatCk[0])}, Value : ${decodeURIComponent(formatCk[1])}`;
+        myCookiesElt.appendChild(cookieElt);
+
+        //Supprimer un cookie
+        cookieElt.addEventListener('click', () => {
+            document.cookie = `${formatCk[0]}=; expires=${new Date(0)}`;
+            cookieElt.innerText = `Cookie ${formatCk[0]} is deleted.`;
+            setTimeout(() => {
+                cookieElt.remove();
+            }, 1000);
+        })
+    });
 }

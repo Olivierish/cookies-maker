@@ -51,6 +51,7 @@ input{
     li{
         padding: 5px 0;
         border-bottom: $light-gray solid 1px;
+        transition: 3s ease-out;
     }
 }
 .warnings{
